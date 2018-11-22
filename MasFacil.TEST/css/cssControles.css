@@ -1,0 +1,111 @@
+﻿@font-face { font-family: 'Standar'; src: url('FutuBk__.ttf'); }
+@font-face { font-family: 'Standar'; src: url('FutuBk__.eot'); }
+
+html body form .RadInput .cssTxtEmpty,
+html body form .RadInput .cssTxtEnabled,
+html body form .RadInput .cssTxtHovered,
+html body form .RadInput .cssTxtFocused,
+html body form .RadInput .cssTxtInvalid,
+html body form .RadInput .MyNegativeTextBox {
+     border-width: 1px; 
+     font-family:'Standar'; 
+}
+ 
+html body .RadInput .cssTxtEmpty {
+     background: #F5FBFE;
+     font-family:'Standar'; 
+}
+ 
+html body form .RadInput .cssTxtEnabled {
+    background: #F5FBFE;
+    font-family:'Standar'; 
+}
+
+html body form .RadInput .cssTxtDisabled {
+    background: #F5FBFE;
+    font-family:'Standar'; 
+}
+ 
+html body form .RadInput .cssTxtHovered {
+    border-color:  #6c6;
+    background: #efe;
+    font-family:'Standar'; 
+}
+ 
+html body form .RadInput .cssTxtFocused {
+    border-color: #2a91c3;   
+    background: #efe;
+    font-family:'Standar'; 
+}
+ 
+html body form .RadInput .cssTxtInvalid {
+    border-color: #f33;
+    background: none #ff9;
+    font-family:'Standar'; 
+}
+
+.CssPnlMenuApartadoSelecccion{
+  background-color:transparent;
+    width:1250px;
+    color:#365C82;
+   font:bold;
+   font-family:'Standar'; 
+}
+.CssPnlMenuApartadoOpciones{
+
+    /*background: url(/Images/Tempo/fonazul.jpg) top left;*/
+    background: #DDDDDD; 
+    width:1250px;
+    height:400px;
+    color:#FFFFFF;
+    margin-top:2px;
+    font-family:'Standar'; 
+}
+.CssDataListMenuApartado{
+
+    /*background: url(/Images/Tempo/fonazul.jpg) top left;*/
+    background: #DDDDDD; 
+    color:#FFFFFF;
+    font-family:'Standar'; 
+}
+
+.cspnlBtnsAcciones{
+    margin-top:2px;
+    background-color:transparent;
+    text-align:left;
+    font-family:'Standar'; 
+}
+
+.cspnlBtnsAplicaAccion{
+    background-color:transparent;
+    text-align:right;
+    padding-top:5px; 
+    font-family:'Standar'; 
+}
+
+
+
+
+
+fieldset {
+    border: solid 1px #365C82;
+    background-color:transparent;
+    margin-top:5px;
+    padding:5px;  
+    font-family:'Standar'; 
+    /*border-radius: 15px 15px 15px 15px;*/ 
+}
+ 
+legend {
+    background-color:transparent;
+    padding-left:5px;
+    padding-right:5px;
+    color:#365C82 ;
+  font-family:'Standar'; 
+
+
+}
+.outerMultiPage{
+     font-family:'Standar'; 
+
+}

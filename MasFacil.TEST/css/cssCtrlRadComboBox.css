@@ -1,0 +1,34 @@
+﻿@font-face { font-family: 'Standar'; src: url('FutuBk__.ttf'); }
+@font-face { font-family: 'Standar'; src: url('FutuBk__.eot'); }
+
+
+.cssRadComboBox.RadComboBoxDropDown .rcbHeader {
+    padding: 5px 27px 4px 7px;
+    background-color:dimgray;
+    color:white; 
+    font-family:'Standar';
+}
+ 
+.cssRadComboBox.RadComboBoxDropDown .rcbItem {
+    background-color:white;
+    color:black; 
+    font-family:'Standar';
+}
+
+.cssRadComboBox.RadComboBoxDropDown .rcbFooter {
+    background-color:dimgray;
+    color:white; 
+    font-family:'Standar';
+}
+.cssRadComboBox.RadComboBoxDropDown .rcbHovered {
+    background-color:#E6AE2E;
+    color:white;
+    font-family:'Standar'; 
+}
+
+.rcbScroll {
+    overflow: scroll !important;
+    overflow-x: hidden !important;
+}
+ 
+ 

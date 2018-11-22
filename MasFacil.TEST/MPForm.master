@@ -1,0 +1,272 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MPForm.master.cs" Inherits="MPForm" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+
+     <title>MGM</title>
+
+        <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+              <script src="../Scripts/MGM/jsMGMMenu.js" type="text/javascript"></script>
+              <script src="../Scripts/MGM/jsMPForm.js" type="text/javascript"></script>
+      </telerik:RadCodeBlock>
+
+
+   <script language="javascript" type="text/javascript">
+     javascript:window.history.forward(1);
+     </script>
+
+ 
+
+    <link rel="stylesheet" type="text/css" href="css/cssMPForm.css"/>
+     <link rel="stylesheet" type="text/css" href="css/cssCtrlRadComboBox.css" />
+
+   <style type="text/css">
+        #PiePagina{
+                color: #FFF;
+                background: #000;
+                position:fixed; /*El div será ubicado con relación a la pantalla*/
+                left:0px; /*A la derecha deje un espacio de 0px*/
+                right:0px; /*A la izquierda deje un espacio de 0px*/
+                bottom:0px; /*Abajo deje un espacio de 0px*/
+                height:30px; /*alto del div*/
+                z-index:0;
+
+         }
+        #EncPagina{
+                color: #FFF;
+                /*background: #000;*/
+                position:relative; /*El div será ubicado con relación a la pantalla*/
+                left:0px; /*A la derecha deje un espacio de 0px*/
+                right:0px; /*A la izquierda deje un espacio de 0px*/
+               top:0px; /*Abajo deje un espacio de 0px*/
+                height:120px; /*alto del div*/
+                z-index:0;
+         
+         }
+        #fijo
+        {
+        background: #999999;
+        position:fixed;
+        height: 180px;
+        margin-left: 110px;
+        margin-right: auto;
+        margin-top: -10px;
+        opacity: 0.8;
+        border: 2px solid #999999;
+        -webkit-border-radius:1px;
+        -moz-border-radius:1px;
+        -moz-box-shadow: 0px 0px 15px #505050;
+        -webkit-box-shadow: 0px 0px 15px #505050;
+        }
+    </style>
+
+
+    <asp:ContentPlaceHolder id="headMPForm" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server"  style="font-family:Standar; " align="center" > 
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+
+             <Scripts>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
+
+            </Scripts>
+        </telerik:RadScriptManager>
+
+            
+
+  <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel1" runat="server" Skin="Silk"></telerik:RadAjaxLoadingPanel>
+  <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel2" runat="server" BackColor="White" Transparency="30"></telerik:RadAjaxLoadingPanel>
+
+
+    <div align="center" >
+        <table border="0" cellpadding="0" cellspacing="0"
+               style="width:100%;  margin:0px; border-style:none; background-color:white;">
+                <tr valign="top" align="center" style="width:100%; margin:0px; background-color:transparent; ">
+                    <td>
+
+                        <div style=" width:1280px;"></div>
+                        <asp:Panel ID="PnlMPFormEncabezado" Width="1280px" runat="server" CssClass="PnlMPFormEncabezado" >
+                           <table cellspacing="0px" cellpadding="0px" style=" background-color:transparent; float:left;  vertical-align:top; width:400px; height:60px;">
+                                <tr >
+                                    <td >                                        
+                                        <%--<asp:Image ID="Image1" runat="server" ImageUrl="Images/LogoCia.png" Height="55px" Width="150px" ImageAlign="Left" /> --%>  
+                                        <telerik:RadBinaryImage ID="RadBinaryImage1" runat="server" Height="55px" Width="150px" ImageAlign="Left" AutoAdjustImageControlSize="false" />                    
+                                    </td>
+                                </tr>
+                           </table> 
+
+                            <%--OnClientItemClicked="copyPasterItemClicked"--%>
+
+                            <table cellspacing="0px" cellpadding="0px" style=" background-color:transparent; float:right;  vertical-align:top; width:280px; height:60px; margin-right:5px;">
+                                <tr >
+                                    <td >                                        
+                                       <telerik:RadMenu   OnItemClick="rBtn_Click" ID="RadMenu2" CssClass="mainMenu" runat="server"  BorderColor="#E2DFDE" style=" width: 280px;  Height: 35px; z-index:300; " Skin="Glow"  >
+                                        <Items>
+                                            <telerik:RadMenuItem Text="Nombre Usuario  (USUARIO)" Font-Size="10" Height="39px" Width="280px">
+                                                <GroupSettings Width="280px"  />
+                                                <Items>
+                                                    <telerik:RadMenuItem Value="per" Text="Perfil"   CssClass="LblLeySelctConpania"    EnableImageSprite="true" ></telerik:RadMenuItem>
+                                                    <telerik:RadMenuItem Value="cia" Text="Campañia"    CssClass="LblLeySelctConpania"  EnableImageSprite="true"  ></telerik:RadMenuItem>
+                                                    <telerik:RadMenuItem Value="ses" Text="Cerrar Sesion" CssClass="LblLeySelctConpania" EnableImageSprite="true" ></telerik:RadMenuItem>
+                                                </Items> 
+                                            </telerik:RadMenuItem>
+                                        </Items>
+                                        </telerik:RadMenu>                     
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                            <asp:Label ID="lblCompaniaMaster" runat="server" Text="Caracolito" Font-Bold="true"></asp:Label>
+                                    </td> 
+                                </tr>
+                           </table> 
+
+                            <table cellspacing="0px" cellpadding="0px" style=" background-color:transparent; float:right; display:table;  vertical-align:top; width:50px; height:60px;">
+                                <tr >
+                                    <td >                                        
+                                        <%--<asp:Image ID="Image3" runat="server" ImageUrl="Images/Foto.jpg" Height="60px" Width="50px" ImageAlign="Left" /> --%>   
+                                        <telerik:RadBinaryImage ID="RadBinaryImage2" runat="server" Height="57px" Width="50px" AutoAdjustImageControlSize="false" ImageAlign="Left"/>                  
+                                    </td>
+                                </tr>
+                           </table>
+                             
+                           <%--<table cellspacing="0px" cellpadding="0px" style=" background-color:transparent; float:right; display:table;  vertical-align:top; width:100px; height:60px; font-size:12px; color:#355C82;">
+                                <tr >
+                                    <td >                                        
+                                        <asp:Image ID="Image5" runat="server" ImageUrl="Images/ayuda.png" Height="20px" Width="20px" ImageAlign="Left" /> &nbsp 
+                                        <asp:Label ID="Label2" runat="server" Text="Ayuda"></asp:Label>          
+                                    </td>
+                                </tr>
+                           </table> --%>
+
+                           <table cellspacing="0px" cellpadding="0px" style=" background-color:transparent; float:right; display:table;  vertical-align:top; width:100px; height:60px; font-size:12px; color:#355C82;">
+                                <tr>
+                                    <td>    
+                                        <telerik:RadImageButton  ID="rBtnBuscarImg"  runat ="server" Width="15px" Height="15px" Image-Sizing="Stretch" Image-DisabledUrl="~/Images/ayuda.png" Image-Url="~/Images/ayuda.png" Image-HoveredUrl="~/Images/ayuda.png"    ToolTip="Ayuda"  Text ="" OnClick="rdAyuda_Click"></telerik:RadImageButton>
+                                        <telerik:RadButton ID="rBtnBuscar" runat="server" Text="Ayuda" Skin="Metro" OnClick="rdAyuda_Click" Width="50px"  BackColor="Transparent"  BorderColor="Transparent" ForeColor="#355c82" ></telerik:RadButton>
+                                        <telerik:RadWindow runat="server"  NavigateUrl="DC/AyudaUsu.aspx" ID="rWinAyudaUsu" Width="800px" Height="540px" Modal="true" VisibleStatusbar="false" VisibleTitlebar="true" Behaviors="Close"  >               
+                                        </telerik:RadWindow>        
+                                    </td>
+                                </tr>
+                           </table>
+                           <table cellspacing="0px" cellpadding="0px" style=" background-color:transparent; float:right; display:table;  vertical-align:top; width:100px; height:60px; font-size:12px; color:#355C82;"  >
+                                <tr >
+                                    <td >                                        
+                                        <asp:Image ID="Image4" runat="server" ImageUrl="Images/feedback.png" Height="20px" Width="20px" ImageAlign="Left" /> &nbsp
+                                        <asp:Label ID="Label3" runat="server" Text="FeedBack"></asp:Label>                        
+                                    </td>
+                                </tr>
+                           </table> 
+                        </asp:Panel>
+                        <asp:Panel ID="PnlMPFormMenu" runat="server" CssClass="PnlMPFormMenu"  >
+                            <asp:Image ID="Image2" runat="server" ImageUrl="Images/home_w.png"  BorderWidth="5px" BorderColor="#355C82" Width="30" Height="30" ImageAlign="Left" />
+                            <telerik:RadMenu ID="RadMenuPrincipal" runat="server" style="top: 1px; left: 0px; height: 39px; z-index:300; " Skin="Glow" >
+                                 <Items>
+                                    <telerik:RadMenuItem runat="server" id="RadMenuItem" Font-Size="10" Height="39px" >
+                                    </telerik:RadMenuItem>
+                                 </Items>
+                            </telerik:RadMenu>
+                        </asp:Panel>
+                    </td>
+                </tr>
+        </table>
+    </div>
+
+    <div align="center">    
+        
+        <table border="0" cellpadding="0" cellspacing="0" style="width:1280px; height:100%; border-style:none; background-color:white;">
+                <tr valign="top" align="center"
+                    style="width:1280px;   margin:0px; ">
+                    <td>
+                        <asp:Panel ID="pnlTitlePage" runat="server"  CssClass="PnlMPFormTitulo" >
+                             <asp:Label ID="lblTitlePage" runat="server" Text=""></asp:Label>  
+                        </asp:Panel> 
+                        <%--ScrollBars="Vertical"   Height="500px" Width="100%"--%>
+                        <asp:Panel ID="PnlMPFormContenido" runat="server" CssClass="PnlMPFormContenido"   >
+                            <asp:ContentPlaceHolder id="ContentPlaceHolderMPForm" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <br />
+                            <br />
+                        </asp:Panel>           
+                    </td>
+                </tr>
+        </table>
+
+        <div id="PiePagina">
+                <table border="0" cellpadding="0" cellspacing="0" 
+                       style="width:100%; height:25px; margin:0px; border-style:none; vertical-align:bottom; background-color:transparent;">
+                        <tr  " align="center" style="width:100%; height:25px; margin:0px; ">
+                            <td>
+                                <asp:Panel ID="PnlMPFromPiePag" runat="server" CssClass="PnlMPFromPiePag">
+                                    <table cellspacing="0px" cellpadding="0px" style=" background-color:transparent; float:left; margin-right:5px;    vertical-align:top; width:76px; ">
+                                                <tr >
+                                                    <td >                                        
+                                                        <asp:Image ID="imgManag" ImageUrl="images/iconos/ManagementPiePag.png" runat="server"  Height="25px" Width="76px" ImageAlign="Right"/>
+                                                    </td>
+                                                </tr>
+                                      </table> 
+                                    <table cellspacing="0px" cellpadding="0px" style=" background-color:transparent; float:left; margin-top:6px;    vertical-align:top; width:500px; ">
+                                                <tr >
+                                                    <td >                                        
+                                                       <asp:Label ID="lblFooter" runat="server" Text="Copyright 2017-2018 Todos los derechos reservados." CssClass="lblPiePagina"></asp:Label>    
+                                                    </td>
+                                                </tr>
+                                      </table> 
+                                      <%--<table cellspacing="0px" cellpadding="0px" style=" background-color:transparent; float:left; margin-right:25px;  vertical-align:top; width:76px; ">
+                                                <tr >
+                                                    <td >                                        
+                                                        <asp:Image ID="imgManag" ImageUrl="images/iconos/ManagementPiePag.png" runat="server"  Height="25px" Width="76px" ImageAlign="Right"/>
+                                                       <asp:Label ID="lblFooter" runat="server" Text="Copyright 2017 Todos los derechos reservados." CssClass="lblPiePagina"></asp:Label>    
+                                                    </td>
+                                                </tr>
+                                      </table> --%>
+                                      <%--<table cellspacing="0px" cellpadding="0px" style=" background-color:transparent; float:left; margin-left:10px; margin-top:4px; vertical-align:top; width:500px; ">
+                                                <tr >
+                                                    <td >                                        
+                                                        <asp:Label ID="lblFooter" runat="server" Text="Copyright 2017 Todos los derechos reservados." CssClass="lblPiePagina"></asp:Label>                    
+                                                    </td>
+                                                </tr>
+                                      </table> --%>
+
+                               </asp:Panel> 
+                            </td>
+                        </tr>
+                </table>
+        </div>
+
+    </div>
+      
+    <telerik:RadWindow runat="server" ID="RWComapania" Width="400px" Height="200px" Modal="true"  VisibleStatusbar="false" VisibleTitlebar="true" Behaviors="Close" Title="Compañias" >
+    </telerik:RadWindow>
+
+    <telerik:RadWindow runat="server" ID="RWPerfil" NavigateUrl="~/SG/MttoPerfilMs.aspx" Width="430px" Height="280px" Modal="true"  VisibleStatusbar="false" VisibleTitlebar="true" Behaviors="Close" Title="Perfil" >
+    </telerik:RadWindow>
+
+   <%-- PANEL COMPANIAS--%>
+    <asp:Panel ID="pnlCompanias" runat="server">
+        <telerik:RadLabel ID="RadLabel1" runat="server" CssClass ="LblLeySelctConpania" Text="Selecciona la compañia en la que deseas comenzar a trabajar."></telerik:RadLabel>
+        <hr align="center" width="97%" style="height: -15px" />
+        <br />
+        <telerik:RadComboBox ID="rCboCompanias" runat="server" DropDownCssClass="cssRadComboBox"   Width="250px"></telerik:RadComboBox>
+        <br /><br /><br />
+         <asp:Panel  ID="pnlBtnsAplicaAccion" Width="100%"   runat="server">
+            <telerik:RadImageButton  ID="rBtnGuardar"  runat ="server" Width="80px" Height="25px" Image-Sizing="Stretch" Image-DisabledUrl="~/Imagenes/IcoBotones/IcoBtnGuardarDisabled.png" Image-Url="~/Imagenes/IcoBotones/IcoBtnGuardar.png" Image-HoveredUrl="~/Imagenes/IcoBotones/IcoBtnGuardarHovered.png"    ToolTip="Guardar"  Text =""    Enabled="true"  OnClick="rBtnAceptar_Click"></telerik:RadImageButton>
+            <telerik:RadImageButton  ID="rBtnCancelar"  runat="server"  Width="80px" Height="25px" Image-Sizing="Stretch" Image-DisabledUrl="~/Imagenes/IcoBotones/IcoBtnCancelarDisabled.png" Image-Url="~/Imagenes/IcoBotones/IcoBtnCancelar.png" Image-HoveredUrl="~/Imagenes/IcoBotones/IcoBtnCancelarHovered.png"  ToolTip="Cancelar"  Text=""    Enabled="true" ></telerik:RadImageButton>
+        </asp:Panel>
+    </asp:Panel>
+
+
+
+    </form>
+
+</body>
+</html>

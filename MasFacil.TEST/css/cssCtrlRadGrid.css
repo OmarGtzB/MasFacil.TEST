@@ -1,0 +1,63 @@
+﻿@font-face { font-family: 'Standar'; src: url('FutuBk__.ttf'); }
+@font-face { font-family: 'Standar'; src: url('FutuBk__.eot'); }
+
+.Grid
+{
+     border: solid 1px #E6AE2E;
+     background-image: url(/Imagenes/background/fondo.png);
+     background-repeat: no-repeat; 
+} 
+
+
+.GridTable
+{
+     border: solid 0px #365C82;
+}
+
+.GridHeaderStyle
+{
+	text-align:left;
+    font-size:13px;
+    background-color:#365C82;
+    color:#FFFFFF; 
+    padding:5px 5px 5px 5px;
+    font-family:'Standar';
+}
+
+.GridRowStyle
+{
+	background-color:#FFFFFF;
+	font-size: 13px;
+	font-family:'Standar';
+    color:#31353D;
+ 
+     
+}
+
+.GridAlternatingRowStyle
+{
+    background: #8EA0AF; 
+	font-size: 13px;
+	font-family:'Standar';
+    color:#31353D;
+ 
+}
+ 
+ .GridSelectedItem
+ {
+  /*background-image: url(img/SelectedRow.gif);
+  background-repeat: no-repeat;
+  background-position: top right;*/
+  background-color:#E6AE2E  ;
+  font-family:'Standar';
+     /*border: solid 1px  #E6AE2E;*/
+ }
+
+
+.GridFooterStyle {
+ border: solid 1px #ff0000;
+ background-color:aqua;
+ font-family:'Standar';
+}
+ 
+ 

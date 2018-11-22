@@ -1,0 +1,1464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.MGM.mx" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://www.MGM.mx/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.MGM.mx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Service MGM</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.MGM.mx">
+      <s:element name="IniciarSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IniciarSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IniciarSesionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SesionAyuda">
+        <s:complexType />
+      </s:element>
+      <s:element name="SesionAyudaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SesionAyudaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechlog" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerSesionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuarioSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sesion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuarioSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerUsuarioSesionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerMenuSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idServicio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sesion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerMenuSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerMenuSesionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerAnios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sesion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerAniosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerAniosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerCompanias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sesion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerCompaniasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerCompaniasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarContrasenia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarContraseniaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarContraseniaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatasetDesdeProcedimiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadenaXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatasetDesdeProcedimientoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDatasetDesdeProcedimientoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatasetDesdeProcedimientoConError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadenaXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatasetDesdeProcedimientoConErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDatasetDesdeProcedimientoConErrorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutarProcedimiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadenaXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutarProcedimientoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EjecutarProcedimientoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutarProcedimientoConError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadenaXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutarProcedimientoConErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EjecutarProcedimientoConErrorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutarProcedimientoConImagen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadenaXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Imagen" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutarProcedimientoConImagenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EjecutarProcedimientoConImagenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEscalarDesdeProcedimiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cadenaXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conexion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEscalarDesdeProcedimientoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaEscalarDesdeProcedimientoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaWebService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="estatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaWebServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidaWebServiceResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarCorreos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Host" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Puerto" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NombreEnvia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CorreoEnvia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Asunto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CorreosDestinatarios" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CorreosCopia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NombreArchivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextoHTML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarCorreosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnviarCorreosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="anyType" nillable="true" />
+      <s:element name="int" type="s:int" />
+    </s:schema>
+    <s:schema targetNamespace="http://www.MGM.mx/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IniciarSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:IniciarSesion" />
+  </wsdl:message>
+  <wsdl:message name="IniciarSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:IniciarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SesionAyudaSoapIn">
+    <wsdl:part name="parameters" element="tns:SesionAyuda" />
+  </wsdl:message>
+  <wsdl:message name="SesionAyudaSoapOut">
+    <wsdl:part name="parameters" element="tns:SesionAyudaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerSesion" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioSesion" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMenuSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerMenuSesion" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMenuSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerMenuSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAniosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerAnios" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAniosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerAniosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCompaniasSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerCompanias" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCompaniasSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerCompaniasResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarContraseniaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarContrasenia" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarContraseniaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarContraseniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDatasetDesdeProcedimiento" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDatasetDesdeProcedimientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoConErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDatasetDesdeProcedimientoConError" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoConErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDatasetDesdeProcedimientoConErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoSoapIn">
+    <wsdl:part name="parameters" element="tns:EjecutarProcedimiento" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoSoapOut">
+    <wsdl:part name="parameters" element="tns:EjecutarProcedimientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:EjecutarProcedimientoConError" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:EjecutarProcedimientoConErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConImagenSoapIn">
+    <wsdl:part name="parameters" element="tns:EjecutarProcedimientoConImagen" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConImagenSoapOut">
+    <wsdl:part name="parameters" element="tns:EjecutarProcedimientoConImagenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscalarDesdeProcedimientoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaEscalarDesdeProcedimiento" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscalarDesdeProcedimientoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaEscalarDesdeProcedimientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaWebServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaWebService" />
+  </wsdl:message>
+  <wsdl:message name="ValidaWebServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaWebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnviarCorreosSoapIn">
+    <wsdl:part name="parameters" element="tns:EnviarCorreos" />
+  </wsdl:message>
+  <wsdl:message name="EnviarCorreosSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviarCorreosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IniciarSesionHttpGetIn">
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IniciarSesionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SesionAyudaHttpGetIn" />
+  <wsdl:message name="SesionAyudaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSesionHttpGetIn">
+    <wsdl:part name="usuario" type="s:string" />
+    <wsdl:part name="fechlog" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSesionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioSesionHttpGetIn">
+    <wsdl:part name="usuario" type="s:string" />
+    <wsdl:part name="sesion" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioSesionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMenuSesionHttpGetIn">
+    <wsdl:part name="idServicio" type="s:string" />
+    <wsdl:part name="sesion" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMenuSesionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAniosHttpGetIn">
+    <wsdl:part name="sesion" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAniosHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCompaniasHttpGetIn">
+    <wsdl:part name="sesion" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCompaniasHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarContraseniaHttpGetIn">
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarContraseniaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoHttpGetIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoConErrorHttpGetIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoConErrorHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoHttpGetIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConErrorHttpGetIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConErrorHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConImagenHttpGetIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="Imagen" type="s1:StringArray" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConImagenHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscalarDesdeProcedimientoHttpGetIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscalarDesdeProcedimientoHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="ValidaWebServiceHttpGetIn">
+    <wsdl:part name="estatus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidaWebServiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="EnviarCorreosHttpGetIn">
+    <wsdl:part name="Host" type="s:string" />
+    <wsdl:part name="Puerto" type="s:string" />
+    <wsdl:part name="NombreEnvia" type="s:string" />
+    <wsdl:part name="CorreoEnvia" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Asunto" type="s:string" />
+    <wsdl:part name="CorreosDestinatarios" type="s:string" />
+    <wsdl:part name="CorreosCopia" type="s:string" />
+    <wsdl:part name="Mensaje" type="s:string" />
+    <wsdl:part name="Archivo" type="s:string" />
+    <wsdl:part name="NombreArchivo" type="s:string" />
+    <wsdl:part name="TextoHTML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnviarCorreosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="IniciarSesionHttpPostIn">
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IniciarSesionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SesionAyudaHttpPostIn" />
+  <wsdl:message name="SesionAyudaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSesionHttpPostIn">
+    <wsdl:part name="usuario" type="s:string" />
+    <wsdl:part name="fechlog" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSesionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioSesionHttpPostIn">
+    <wsdl:part name="usuario" type="s:string" />
+    <wsdl:part name="sesion" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioSesionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMenuSesionHttpPostIn">
+    <wsdl:part name="idServicio" type="s:string" />
+    <wsdl:part name="sesion" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMenuSesionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAniosHttpPostIn">
+    <wsdl:part name="sesion" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAniosHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCompaniasHttpPostIn">
+    <wsdl:part name="sesion" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCompaniasHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarContraseniaHttpPostIn">
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarContraseniaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoHttpPostIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoConErrorHttpPostIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatasetDesdeProcedimientoConErrorHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoHttpPostIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConErrorHttpPostIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConErrorHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConImagenHttpPostIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="Imagen" type="s1:StringArray" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EjecutarProcedimientoConImagenHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscalarDesdeProcedimientoHttpPostIn">
+    <wsdl:part name="cadenaXML" type="s:string" />
+    <wsdl:part name="conexion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscalarDesdeProcedimientoHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="ValidaWebServiceHttpPostIn">
+    <wsdl:part name="estatus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidaWebServiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="EnviarCorreosHttpPostIn">
+    <wsdl:part name="Host" type="s:string" />
+    <wsdl:part name="Puerto" type="s:string" />
+    <wsdl:part name="NombreEnvia" type="s:string" />
+    <wsdl:part name="CorreoEnvia" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Asunto" type="s:string" />
+    <wsdl:part name="CorreosDestinatarios" type="s:string" />
+    <wsdl:part name="CorreosCopia" type="s:string" />
+    <wsdl:part name="Mensaje" type="s:string" />
+    <wsdl:part name="Archivo" type="s:string" />
+    <wsdl:part name="NombreArchivo" type="s:string" />
+    <wsdl:part name="TextoHTML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnviarCorreosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioSoap">
+    <wsdl:operation name="IniciarSesion">
+      <wsdl:input message="tns:IniciarSesionSoapIn" />
+      <wsdl:output message="tns:IniciarSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SesionAyuda">
+      <wsdl:input message="tns:SesionAyudaSoapIn" />
+      <wsdl:output message="tns:SesionAyudaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSesion">
+      <wsdl:input message="tns:ObtenerSesionSoapIn" />
+      <wsdl:output message="tns:ObtenerSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioSesion">
+      <wsdl:input message="tns:ObtenerUsuarioSesionSoapIn" />
+      <wsdl:output message="tns:ObtenerUsuarioSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuSesion">
+      <wsdl:input message="tns:ObtenerMenuSesionSoapIn" />
+      <wsdl:output message="tns:ObtenerMenuSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAnios">
+      <wsdl:input message="tns:ObtenerAniosSoapIn" />
+      <wsdl:output message="tns:ObtenerAniosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCompanias">
+      <wsdl:input message="tns:ObtenerCompaniasSoapIn" />
+      <wsdl:output message="tns:ObtenerCompaniasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarContrasenia">
+      <wsdl:input message="tns:RecuperarContraseniaSoapIn" />
+      <wsdl:output message="tns:RecuperarContraseniaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimiento">
+      <wsdl:input message="tns:ObtenerDatasetDesdeProcedimientoSoapIn" />
+      <wsdl:output message="tns:ObtenerDatasetDesdeProcedimientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimientoConError">
+      <wsdl:input message="tns:ObtenerDatasetDesdeProcedimientoConErrorSoapIn" />
+      <wsdl:output message="tns:ObtenerDatasetDesdeProcedimientoConErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimiento">
+      <wsdl:input message="tns:EjecutarProcedimientoSoapIn" />
+      <wsdl:output message="tns:EjecutarProcedimientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConError">
+      <wsdl:input message="tns:EjecutarProcedimientoConErrorSoapIn" />
+      <wsdl:output message="tns:EjecutarProcedimientoConErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConImagen">
+      <wsdl:input message="tns:EjecutarProcedimientoConImagenSoapIn" />
+      <wsdl:output message="tns:EjecutarProcedimientoConImagenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscalarDesdeProcedimiento">
+      <wsdl:input message="tns:ConsultaEscalarDesdeProcedimientoSoapIn" />
+      <wsdl:output message="tns:ConsultaEscalarDesdeProcedimientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaWebService">
+      <wsdl:input message="tns:ValidaWebServiceSoapIn" />
+      <wsdl:output message="tns:ValidaWebServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreos">
+      <wsdl:input message="tns:EnviarCorreosSoapIn" />
+      <wsdl:output message="tns:EnviarCorreosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServicioHttpGet">
+    <wsdl:operation name="IniciarSesion">
+      <wsdl:input message="tns:IniciarSesionHttpGetIn" />
+      <wsdl:output message="tns:IniciarSesionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SesionAyuda">
+      <wsdl:input message="tns:SesionAyudaHttpGetIn" />
+      <wsdl:output message="tns:SesionAyudaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSesion">
+      <wsdl:input message="tns:ObtenerSesionHttpGetIn" />
+      <wsdl:output message="tns:ObtenerSesionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioSesion">
+      <wsdl:input message="tns:ObtenerUsuarioSesionHttpGetIn" />
+      <wsdl:output message="tns:ObtenerUsuarioSesionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuSesion">
+      <wsdl:input message="tns:ObtenerMenuSesionHttpGetIn" />
+      <wsdl:output message="tns:ObtenerMenuSesionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAnios">
+      <wsdl:input message="tns:ObtenerAniosHttpGetIn" />
+      <wsdl:output message="tns:ObtenerAniosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCompanias">
+      <wsdl:input message="tns:ObtenerCompaniasHttpGetIn" />
+      <wsdl:output message="tns:ObtenerCompaniasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarContrasenia">
+      <wsdl:input message="tns:RecuperarContraseniaHttpGetIn" />
+      <wsdl:output message="tns:RecuperarContraseniaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimiento">
+      <wsdl:input message="tns:ObtenerDatasetDesdeProcedimientoHttpGetIn" />
+      <wsdl:output message="tns:ObtenerDatasetDesdeProcedimientoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimientoConError">
+      <wsdl:input message="tns:ObtenerDatasetDesdeProcedimientoConErrorHttpGetIn" />
+      <wsdl:output message="tns:ObtenerDatasetDesdeProcedimientoConErrorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimiento">
+      <wsdl:input message="tns:EjecutarProcedimientoHttpGetIn" />
+      <wsdl:output message="tns:EjecutarProcedimientoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConError">
+      <wsdl:input message="tns:EjecutarProcedimientoConErrorHttpGetIn" />
+      <wsdl:output message="tns:EjecutarProcedimientoConErrorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConImagen">
+      <wsdl:input message="tns:EjecutarProcedimientoConImagenHttpGetIn" />
+      <wsdl:output message="tns:EjecutarProcedimientoConImagenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscalarDesdeProcedimiento">
+      <wsdl:input message="tns:ConsultaEscalarDesdeProcedimientoHttpGetIn" />
+      <wsdl:output message="tns:ConsultaEscalarDesdeProcedimientoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaWebService">
+      <wsdl:input message="tns:ValidaWebServiceHttpGetIn" />
+      <wsdl:output message="tns:ValidaWebServiceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreos">
+      <wsdl:input message="tns:EnviarCorreosHttpGetIn" />
+      <wsdl:output message="tns:EnviarCorreosHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServicioHttpPost">
+    <wsdl:operation name="IniciarSesion">
+      <wsdl:input message="tns:IniciarSesionHttpPostIn" />
+      <wsdl:output message="tns:IniciarSesionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SesionAyuda">
+      <wsdl:input message="tns:SesionAyudaHttpPostIn" />
+      <wsdl:output message="tns:SesionAyudaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSesion">
+      <wsdl:input message="tns:ObtenerSesionHttpPostIn" />
+      <wsdl:output message="tns:ObtenerSesionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioSesion">
+      <wsdl:input message="tns:ObtenerUsuarioSesionHttpPostIn" />
+      <wsdl:output message="tns:ObtenerUsuarioSesionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuSesion">
+      <wsdl:input message="tns:ObtenerMenuSesionHttpPostIn" />
+      <wsdl:output message="tns:ObtenerMenuSesionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAnios">
+      <wsdl:input message="tns:ObtenerAniosHttpPostIn" />
+      <wsdl:output message="tns:ObtenerAniosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCompanias">
+      <wsdl:input message="tns:ObtenerCompaniasHttpPostIn" />
+      <wsdl:output message="tns:ObtenerCompaniasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarContrasenia">
+      <wsdl:input message="tns:RecuperarContraseniaHttpPostIn" />
+      <wsdl:output message="tns:RecuperarContraseniaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimiento">
+      <wsdl:input message="tns:ObtenerDatasetDesdeProcedimientoHttpPostIn" />
+      <wsdl:output message="tns:ObtenerDatasetDesdeProcedimientoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimientoConError">
+      <wsdl:input message="tns:ObtenerDatasetDesdeProcedimientoConErrorHttpPostIn" />
+      <wsdl:output message="tns:ObtenerDatasetDesdeProcedimientoConErrorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimiento">
+      <wsdl:input message="tns:EjecutarProcedimientoHttpPostIn" />
+      <wsdl:output message="tns:EjecutarProcedimientoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConError">
+      <wsdl:input message="tns:EjecutarProcedimientoConErrorHttpPostIn" />
+      <wsdl:output message="tns:EjecutarProcedimientoConErrorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConImagen">
+      <wsdl:input message="tns:EjecutarProcedimientoConImagenHttpPostIn" />
+      <wsdl:output message="tns:EjecutarProcedimientoConImagenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscalarDesdeProcedimiento">
+      <wsdl:input message="tns:ConsultaEscalarDesdeProcedimientoHttpPostIn" />
+      <wsdl:output message="tns:ConsultaEscalarDesdeProcedimientoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaWebService">
+      <wsdl:input message="tns:ValidaWebServiceHttpPostIn" />
+      <wsdl:output message="tns:ValidaWebServiceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreos">
+      <wsdl:input message="tns:EnviarCorreosHttpPostIn" />
+      <wsdl:output message="tns:EnviarCorreosHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioSoap" type="tns:ServicioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IniciarSesion">
+      <soap:operation soapAction="http://www.MGM.mx/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SesionAyuda">
+      <soap:operation soapAction="http://www.MGM.mx/SesionAyuda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSesion">
+      <soap:operation soapAction="http://www.MGM.mx/ObtenerSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioSesion">
+      <soap:operation soapAction="http://www.MGM.mx/ObtenerUsuarioSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuSesion">
+      <soap:operation soapAction="http://www.MGM.mx/ObtenerMenuSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAnios">
+      <soap:operation soapAction="http://www.MGM.mx/ObtenerAnios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCompanias">
+      <soap:operation soapAction="http://www.MGM.mx/ObtenerCompanias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarContrasenia">
+      <soap:operation soapAction="http://www.MGM.mx/RecuperarContrasenia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimiento">
+      <soap:operation soapAction="http://www.MGM.mx/ObtenerDatasetDesdeProcedimiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimientoConError">
+      <soap:operation soapAction="http://www.MGM.mx/ObtenerDatasetDesdeProcedimientoConError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimiento">
+      <soap:operation soapAction="http://www.MGM.mx/EjecutarProcedimiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConError">
+      <soap:operation soapAction="http://www.MGM.mx/EjecutarProcedimientoConError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConImagen">
+      <soap:operation soapAction="http://www.MGM.mx/EjecutarProcedimientoConImagen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscalarDesdeProcedimiento">
+      <soap:operation soapAction="http://www.MGM.mx/ConsultaEscalarDesdeProcedimiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaWebService">
+      <soap:operation soapAction="http://www.MGM.mx/ValidaWebService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreos">
+      <soap:operation soapAction="http://www.MGM.mx/EnviarCorreos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioSoap12" type="tns:ServicioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IniciarSesion">
+      <soap12:operation soapAction="http://www.MGM.mx/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SesionAyuda">
+      <soap12:operation soapAction="http://www.MGM.mx/SesionAyuda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSesion">
+      <soap12:operation soapAction="http://www.MGM.mx/ObtenerSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioSesion">
+      <soap12:operation soapAction="http://www.MGM.mx/ObtenerUsuarioSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuSesion">
+      <soap12:operation soapAction="http://www.MGM.mx/ObtenerMenuSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAnios">
+      <soap12:operation soapAction="http://www.MGM.mx/ObtenerAnios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCompanias">
+      <soap12:operation soapAction="http://www.MGM.mx/ObtenerCompanias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarContrasenia">
+      <soap12:operation soapAction="http://www.MGM.mx/RecuperarContrasenia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimiento">
+      <soap12:operation soapAction="http://www.MGM.mx/ObtenerDatasetDesdeProcedimiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimientoConError">
+      <soap12:operation soapAction="http://www.MGM.mx/ObtenerDatasetDesdeProcedimientoConError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimiento">
+      <soap12:operation soapAction="http://www.MGM.mx/EjecutarProcedimiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConError">
+      <soap12:operation soapAction="http://www.MGM.mx/EjecutarProcedimientoConError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConImagen">
+      <soap12:operation soapAction="http://www.MGM.mx/EjecutarProcedimientoConImagen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscalarDesdeProcedimiento">
+      <soap12:operation soapAction="http://www.MGM.mx/ConsultaEscalarDesdeProcedimiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaWebService">
+      <soap12:operation soapAction="http://www.MGM.mx/ValidaWebService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreos">
+      <soap12:operation soapAction="http://www.MGM.mx/EnviarCorreos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioHttpGet" type="tns:ServicioHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="IniciarSesion">
+      <http:operation location="/IniciarSesion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SesionAyuda">
+      <http:operation location="/SesionAyuda" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSesion">
+      <http:operation location="/ObtenerSesion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioSesion">
+      <http:operation location="/ObtenerUsuarioSesion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuSesion">
+      <http:operation location="/ObtenerMenuSesion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAnios">
+      <http:operation location="/ObtenerAnios" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCompanias">
+      <http:operation location="/ObtenerCompanias" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarContrasenia">
+      <http:operation location="/RecuperarContrasenia" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimiento">
+      <http:operation location="/ObtenerDatasetDesdeProcedimiento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimientoConError">
+      <http:operation location="/ObtenerDatasetDesdeProcedimientoConError" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimiento">
+      <http:operation location="/EjecutarProcedimiento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConError">
+      <http:operation location="/EjecutarProcedimientoConError" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConImagen">
+      <http:operation location="/EjecutarProcedimientoConImagen" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscalarDesdeProcedimiento">
+      <http:operation location="/ConsultaEscalarDesdeProcedimiento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaWebService">
+      <http:operation location="/ValidaWebService" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreos">
+      <http:operation location="/EnviarCorreos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioHttpPost" type="tns:ServicioHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="IniciarSesion">
+      <http:operation location="/IniciarSesion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SesionAyuda">
+      <http:operation location="/SesionAyuda" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSesion">
+      <http:operation location="/ObtenerSesion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioSesion">
+      <http:operation location="/ObtenerUsuarioSesion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuSesion">
+      <http:operation location="/ObtenerMenuSesion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAnios">
+      <http:operation location="/ObtenerAnios" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCompanias">
+      <http:operation location="/ObtenerCompanias" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarContrasenia">
+      <http:operation location="/RecuperarContrasenia" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimiento">
+      <http:operation location="/ObtenerDatasetDesdeProcedimiento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatasetDesdeProcedimientoConError">
+      <http:operation location="/ObtenerDatasetDesdeProcedimientoConError" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimiento">
+      <http:operation location="/EjecutarProcedimiento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConError">
+      <http:operation location="/EjecutarProcedimientoConError" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutarProcedimientoConImagen">
+      <http:operation location="/EjecutarProcedimientoConImagen" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscalarDesdeProcedimiento">
+      <http:operation location="/ConsultaEscalarDesdeProcedimiento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaWebService">
+      <http:operation location="/ValidaWebService" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreos">
+      <http:operation location="/EnviarCorreos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicio">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Service MGM</wsdl:documentation>
+    <wsdl:port name="ServicioSoap" binding="tns:ServicioSoap">
+      <soap:address location="http://localhost/MGM.Servicios/MGM.Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioSoap12" binding="tns:ServicioSoap12">
+      <soap12:address location="http://localhost/MGM.Servicios/MGM.Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioHttpGet" binding="tns:ServicioHttpGet">
+      <http:address location="http://localhost/MGM.Servicios/MGM.Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioHttpPost" binding="tns:ServicioHttpPost">
+      <http:address location="http://localhost/MGM.Servicios/MGM.Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

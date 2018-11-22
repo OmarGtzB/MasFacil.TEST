@@ -1,0 +1,19 @@
+﻿@font-face { font-family: 'Standar'; src: url('FutuBk__.ttf'); }
+@font-face { font-family: 'Standar'; src: url('FutuBk__.eot'); }
+ 
+.MGMLogin {
+  overflow: hidden;
+  height: 100vh;
+  text-align: center;
+  -webkit-transition: background-color;
+  -o-transition: background-color;
+  transition: background-color;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+    background-color: white;
+	background-image: url("../Imagenes/background/login.jpg") ;
+	background-position: center top;
+    font-family:'Standar'; 
+}
+
+ 
